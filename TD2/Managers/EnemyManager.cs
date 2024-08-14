@@ -77,14 +77,14 @@ namespace TD2.Managers
         public void Update(GameTime gametime)
         {
             time += gametime.ElapsedGameTime.Milliseconds;
-            if (spawnOk)
+            if (spawnOk && time > 20000)
             {
                 SpawnTabletScarps(gametime);
                 SpawnComputers(gametime);
 
             }
 
-            if (!spawnOk)
+            if (enemies.Count == 0)
             {
                 Globals.timeUntilNextWave -= gametime.ElapsedGameTime.Milliseconds * 0.001f;
             }

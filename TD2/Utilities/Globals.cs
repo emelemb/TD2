@@ -16,7 +16,7 @@ namespace TD2.Utilities
 
         public static Vector2 mousePos;
 
-        public static int screenWidth = 900;
+        public static int screenWidth = 1200;
         public static int screenHeight = 650;
 
        public static int money = 500;
@@ -25,7 +25,7 @@ namespace TD2.Utilities
 
         public static Point mousePoint;
 
-        public static int waveCount = 1;
+        public static int waveCount = 0;
         public static float timeUntilNextWave = 20;
 
        public static int lives;

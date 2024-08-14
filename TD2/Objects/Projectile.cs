@@ -29,7 +29,7 @@ namespace TD2.Objects
 
         }
 
-        public override void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb)
         {
             sb.Draw(texture, position,null,Color.White, rotation, new Vector2(HitBox.Width / 2,HitBox.Height /2), 1f, SpriteEffects.None, 0);
         }

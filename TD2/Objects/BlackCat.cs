@@ -38,6 +38,7 @@ namespace TD2.Objects
         public override void Draw(SpriteBatch sb)
         {
             sb.Draw(TextureManager.exitButton, position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+            base.Draw(sb);
         }
 
 

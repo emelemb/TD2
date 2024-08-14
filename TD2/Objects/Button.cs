@@ -27,7 +27,7 @@ namespace TD2.Objects
             this.position = pos;
             this.texture = tex;
         }
-        public override void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb)
         {
         }
     }

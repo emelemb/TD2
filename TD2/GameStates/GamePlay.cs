@@ -53,12 +53,20 @@ namespace TD2.GameStates
             renderTarget = new RenderTarget2D(graphicsDevice, screenWidth, screenHeight);
             wipTower = new WIPTower(TextureManager.startButton, Globals.mousePos);
             UI = new UI();
-
         }
         internal enum PlayStates
         {
             play,
             pause
+        }
+
+        bool waveActive()
+        {
+            if (enemyManager.enemies.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         internal static PlayStates playState;
@@ -84,16 +92,12 @@ namespace TD2.GameStates
             belt = new EndOfConveyerBelt(TextureManager.orangeWip, endPosition);
           
             towerMenu = new TowerMenu();
-
-            
-              
-
         }
 
-        public bool CanPlace( BaeTower tower)
+        public bool CanPlace(BaeTower tower)
         {
-            Rectangle placementRect = new Rectangle(tower.HitBox.X, tower.HitBox.Y, tower.HitBox.Width / 4, tower.HitBox.Height);
-            if(placementRect.Intersects(UI.Bounds))
+            if (waveActive()) { return false; }
+            if(tower.HitBox.Intersects(UI.Bounds))
             {
                 return false;
             }
@@ -167,7 +171,8 @@ namespace TD2.GameStates
                     belt.Update(gameTime);
                     UI.Update(gameTime );
                     ButtonsLogic();
-                    
+                   
+
 
                     if (belt.Lives <= 0)
                     {

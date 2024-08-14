@@ -18,7 +18,7 @@ namespace TD2.Objects
             
         }
 
-        public override void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb)
         {
             if (Globals.canMove && Globals.currentType == Globals.TowerType.mage)
             {

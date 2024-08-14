@@ -103,21 +103,21 @@ namespace TD2.Objects
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
         }
 
-        public override void Draw(SpriteBatch sb)
+        public virtual void Draw(SpriteBatch sb)
         {
             if (active)
             {
                 //sb.Draw(texture, position, Color.White);
                 //    sb.Draw(texture, position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-                
 
 
 
 
-                //foreach (Projectile projectile in projectiles)
-                //{
-                //    projectile.Draw(sb);
-                //}
+
+                foreach (Projectile projectile in projectiles)
+                {
+                    projectile.Draw(sb);
+                }
             }
         }
     }

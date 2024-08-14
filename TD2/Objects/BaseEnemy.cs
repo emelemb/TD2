@@ -98,7 +98,7 @@ namespace TD2.Objects
 
         }
 
-        public override void Draw(SpriteBatch sb)
+        public virtual void Draw(SpriteBatch sb)
         {
 
         }

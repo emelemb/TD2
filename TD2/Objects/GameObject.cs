@@ -43,7 +43,6 @@ namespace TD2.Objects
             }
         }
 
-        public abstract void Draw(SpriteBatch sb);
 
 
     }
