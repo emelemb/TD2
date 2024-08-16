@@ -38,7 +38,7 @@ namespace TD2
         public void Draw(SpriteBatch _spriteBatch)
         {
             // Draw filled paths
-            cpath_road.DrawFill(gd, TextureManager.exitButton);
+            cpath_road.DrawFill(gd, TextureManager.pathTexture);
             //cpath_moving.DrawFill(gd, TextureManager.wrench);
 
             // Draw control points

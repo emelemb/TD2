@@ -32,7 +32,7 @@ namespace TD2.Objects
             {
                 if (alive)
                 {
-                    cpath_moving.DrawMovingObject(Curve_curpos, sb, TextureManager.startButton);
+                    cpath_moving.DrawMovingObject(Curve_curpos, sb, TextureManager.cpsParts);
 
                     for (int i = 0; i < lives; i++)
                     {
@@ -42,10 +42,9 @@ namespace TD2.Objects
                 }
                 if (!alive)
                 {
-                    cpath_moving.DrawMovingObject(Curve_curpos, sb, TextureManager.pauseButton);
+                    cpath_moving.DrawMovingObject(Curve_curpos, sb, TextureManager.cpsDone);
                 }
-            }
-        
+            }       
         }
     }
 }

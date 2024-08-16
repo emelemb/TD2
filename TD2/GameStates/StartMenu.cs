@@ -85,12 +85,14 @@ namespace TD2.GameStates
             sb.Begin();
             sb.Draw(TextureManager.backGround, Vector2.Zero, Color.White);
 
+            sb.Draw(TextureManager.startButton, startButtonPos, Color.White);
             if (startButton.Hover)
             {
                 sb.Draw(TextureManager.startButton, startButtonPos, Color.Gray);
                 // rn u have to play "find the button" cause itll only show when u hover over it >:)
             }
 
+            sb.Draw(TextureManager.exitButton, exitButtonPos, Color.White);
             if (exitButton.Hover)
             {
                 sb.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);

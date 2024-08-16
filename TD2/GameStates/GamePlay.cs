@@ -83,7 +83,7 @@ namespace TD2.GameStates
             pauseButton = new Button(pauseButtonPos, TextureManager.pauseButton);
 
             resumeButtonPos = new Vector2(300, 200);
-            resumeButton= new Button(resumeButtonPos, TextureManager.pauseButton);
+            resumeButton= new Button(resumeButtonPos, TextureManager.playButton);
 
             exitToMainMenuButtonPos = new Vector2(100, 200);
             exitToMainMenuButton = new Button(exitToMainMenuButtonPos, TextureManager.exitButton);
@@ -211,7 +211,7 @@ namespace TD2.GameStates
                 case PlayStates.pause:
                     spriteBatch.Begin();
                     spriteBatch.Draw(TextureManager.exitButton,resumeButtonPos, Color.White);
-                    spriteBatch.Draw(TextureManager.startButton,exitToMainMenuButtonPos, Color.Purple);
+                    spriteBatch.Draw(TextureManager.playButton,exitToMainMenuButtonPos, Color.Purple);
                     spriteBatch.End();
                     break;
             }               
@@ -229,7 +229,5 @@ namespace TD2.GameStates
 
             graphicsDevice.SetRenderTarget(null);
         }
-
-
     }
 }
