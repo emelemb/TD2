@@ -22,7 +22,7 @@ namespace TD2.Managers
         float delayC = 2000f;
         int timeSinceLast;
         int time;
-        int tabletAmount = 1;
+        int tabletAmount = 0;
         int computerAmount = 1;
         float wave2 = 20000;
 
@@ -83,13 +83,12 @@ namespace TD2.Managers
                 SpawnComputers(gametime);
 
             }
-
             if (enemies.Count == 0)
             {
                 Globals.timeUntilNextWave -= gametime.ElapsedGameTime.Milliseconds * 0.001f;
             }
 
-            //Debug.WriteLine(Globals.timeUntilNextWave);
+            Debug.WriteLine(Globals.mousePos);
 
             if (Globals.timeUntilNextWave <= 0)
             {

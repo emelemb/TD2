@@ -65,11 +65,11 @@ namespace TD2.Objects
         {
             if(positive)
             {
-                sb.Draw(TextureManager.convyerPos, new Vector2(600, 400), Color.White);
+                sb.Draw(TextureManager.convyerPos, HitBox, Color.White);
             }
             if (!positive)
             {
-                sb.Draw(TextureManager.conveyerNeg, new Vector2(600, 400), Color.White);
+                sb.Draw(TextureManager.conveyerNeg,HitBox, Color.White);
             }
 
         }

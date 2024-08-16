@@ -79,7 +79,7 @@ namespace TD2.GameStates
             //policeManager = new PoliceManager();
             //policeManager.AddPolice(new Vector2(400, 100));
 
-            pauseButtonPos = new Vector2(300, 0);
+            pauseButtonPos = new Vector2(690, 20);
             pauseButton = new Button(pauseButtonPos, TextureManager.pauseButton);
 
             resumeButtonPos = new Vector2(300, 200);
@@ -88,8 +88,8 @@ namespace TD2.GameStates
             exitToMainMenuButtonPos = new Vector2(100, 200);
             exitToMainMenuButton = new Button(exitToMainMenuButtonPos, TextureManager.exitButton);
 
-            endPosition = new Vector2(600, 400);
-            belt = new EndOfConveyerBelt(TextureManager.orangeWip, endPosition);
+            endPosition = new Vector2(900,600 );
+            belt = new EndOfConveyerBelt(TextureManager.conveyerNeg, endPosition);
           
             towerMenu = new TowerMenu();
         }
@@ -172,9 +172,14 @@ namespace TD2.GameStates
                     UI.Update(gameTime );
                     ButtonsLogic();
                    
-
+                    
 
                     if (belt.Lives <= 0)
+                    {
+                        state = GameStateManager.GameStates.EndScreen;
+                    }
+
+                    if(Globals.waveCount >= 10)
                     {
                         state = GameStateManager.GameStates.EndScreen;
                     }
@@ -201,17 +206,25 @@ namespace TD2.GameStates
                     //BaseEnemy.Draw(spriteBatch);
                     spriteBatch.Draw(TextureManager.backGround, Vector2.Zero, Color.White);
                     spriteBatch.Draw(renderTarget, Vector2.Zero, Color.White);
-                    spriteBatch.Draw(TextureManager.pauseButton,pauseButtonPos, Color.White);
                     wipTower.Draw(spriteBatch);
                     enemyManager.Draw(spriteBatch);
                     UI.Draw(spriteBatch);
+                    spriteBatch.Draw(TextureManager.pauseButton, pauseButtonPos, Color.White);
                     spriteBatch.End();
                     break;
 
                 case PlayStates.pause:
                     spriteBatch.Begin();
-                    spriteBatch.Draw(TextureManager.exitButton,resumeButtonPos, Color.White);
-                    spriteBatch.Draw(TextureManager.playButton,exitToMainMenuButtonPos, Color.Purple);
+
+                    if (pauseButton.Hover)
+                    {
+                        spriteBatch.Draw(TextureManager.exitButton, resumeButtonPos, Color.Gray);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(TextureManager.exitButton, resumeButtonPos, Color.White);
+                    }
+                        spriteBatch.Draw(TextureManager.playButton,exitToMainMenuButtonPos, Color.Purple);
                     spriteBatch.End();
                     break;
             }               

@@ -16,10 +16,10 @@ namespace TD2.Managers
         public static Texture2D backGround, placementTexture;
         public static Texture2D wrench, screwDriver, orangeWip, blackWip, border, orangeCA, BlackCA;
         public static Texture2D pathTexture, convyerPos, conveyerNeg;
-        public static Texture2D cpsParts, cpsDone, tbsParts, tbsDone;
+        public static Texture2D cpsParts, cpsDone, tbsParts, tbsDone, hp;
         public static void Textures(ContentManager content)// might also need a graphicsDevice if its stops working in the near future tehee
         {
-            backGround = content.Load<Texture2D>("backround");
+            backGround = content.Load<Texture2D>("bgbg");
             startButton = content.Load<Texture2D>("startButton");
             exitButton = content.Load<Texture2D>("QuitButton");
             pauseButton = content.Load<Texture2D>("pauseButton");
@@ -36,19 +36,15 @@ namespace TD2.Managers
             cpsDone = content.Load<Texture2D>("computerDone");
             tbsParts = content.Load<Texture2D>("tabletNot");
             tbsDone = content.Load<Texture2D>("TabletDone");
+            hp = content.Load<Texture2D>("hp");
+
 
             pathTexture = content.Load<Texture2D>("pauseButton");
 
             convyerPos = content.Load<Texture2D>("conEndNeg");
             conveyerNeg = content.Load<Texture2D>("conEndPos");
 
-
-
-
-
-
-
-            border = content.Load<Texture2D>("border");
+            border = content.Load<Texture2D>("bg");
             placementTexture = content.Load<Texture2D>("BlackCat");
 
             //screwDriver= content.Load<Texture2D>("ScrewDriver");

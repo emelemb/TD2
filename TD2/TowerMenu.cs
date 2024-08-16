@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpDX.MediaFoundation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,12 @@ namespace TD2
     public partial class TowerMenu : Form
     {
 
-
+      
 
         public TowerMenu()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,6 +70,8 @@ namespace TD2
             // upgrade orange cat
             Globals.upgradeOrangeCat = true;
         }
+
+     
     }
 }
 

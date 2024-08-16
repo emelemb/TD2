@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using TD2.Objects;
 using SharpDX.MediaFoundation;
+using System.Diagnostics;
 
 namespace TD2.Objects
 {
@@ -28,6 +29,7 @@ namespace TD2.Objects
         public override void Draw(SpriteBatch sb)
         {
             float posX = position.X;
+            Debug.WriteLine(this.hitBox);
 
             if (!perish)
             {
@@ -37,8 +39,8 @@ namespace TD2.Objects
 
                     for (int i = 0; i < lives; i++)
                     {
-                        sb.Draw(TextureManager.orangeWip, new Vector2(posX, position.Y + 10), Color.White);
-                        posX += TextureManager.orangeWip.Width;
+                        sb.Draw(TextureManager.hp, new Vector2(posX, position.Y + 50), Color.White);
+                        posX += TextureManager.hp.Width;
                     }
                 }
                 if (!alive)

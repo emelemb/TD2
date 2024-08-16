@@ -34,10 +34,10 @@ namespace TD2.GameStates
             TextureManager.Textures(content);
 
 
-            startButtonPos = new Vector2(0, 0);
+            startButtonPos = new Vector2(450, 200);
             startButton = new Button( startButtonPos, TextureManager.startButton);
 
-            exitButtonPos = new Vector2(0, 200);
+            exitButtonPos = new Vector2(450, 300);
             exitButton = new Button( exitButtonPos, TextureManager.exitButton);
         }
 

@@ -17,7 +17,7 @@ namespace TD2.Utilities
         public static Vector2 mousePos;
 
         public static int screenWidth = 1000;
-        public static int screenHeight = 750;
+        public static int screenHeight = 700;
 
        public static int money = 500;
        public static int blackcatPrice = 100;

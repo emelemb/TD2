@@ -32,7 +32,7 @@ namespace TD2
 
             // DrawFillSetup must be called (once) for every path that uses DrawFill
             // Call again if curve is altered or if window is resized
-            cpath_road.DrawFillSetup(gd, 50, 30, 26);
+            cpath_road.DrawFillSetup(gd, 30, 2, 26);
         }
  
         public void Draw(SpriteBatch _spriteBatch)

@@ -41,11 +41,11 @@ namespace TD2.Managers
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(TextureManager.border, position, Color.White);
-            sb.DrawString(font, "Wave: " + Globals.waveCount, new Vector2(800, 100), Color.White);
-            sb.DrawString(font, "Money: " + Globals.money, new Vector2(800, 120), Color.White);
-            sb.DrawString(font, "Time until next wave: " + time, new Vector2(800, 140), Color.White);
-            sb.DrawString(font, "Lives: " + Globals.lives, new Vector2(800, 160), Color.White);
+            sb.Draw(TextureManager.border, new Vector2(0,0), Color.White);
+            sb.DrawString(font, " " + Globals.waveCount, new Vector2(892, 374), Color.White);
+            sb.DrawString(font," " + Globals.money, new Vector2(890, 99), Color.White);
+            sb.DrawString(font, " " + time, new Vector2(887, 312), Color.White);
+            sb.DrawString(font, " " + Globals.lives, new Vector2(895, 226), Color.White);
         }
 
 

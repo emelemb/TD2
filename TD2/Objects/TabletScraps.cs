@@ -42,8 +42,8 @@ namespace TD2.Objects
 
                     for (int i = 0; i < lives; i++) 
                     { 
-                       sb.Draw(TextureManager.orangeWip, new Vector2(posX, position.Y + 10), Color.White);
-                        posX += TextureManager.orangeWip.Width;
+                       sb.Draw(TextureManager.hp, new Vector2(posX, position.Y + 100), Color.White);
+                        posX += TextureManager.hp.Width;
 
                     }
                 }

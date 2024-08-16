@@ -26,7 +26,7 @@ namespace TD2.Objects
 
         int slowedTime = 3;
         float slowedfor = 0;
-        public Point frameSize = new Point(60, 65);
+        public Point frameSize = new Point(68,75);
         public Point currentFrame = new Point(0, 0);
         public int timeSinceLastFrame = 0;
         public int msPerFrame = 300;
@@ -95,7 +95,7 @@ namespace TD2.Objects
                 collision(projectile, enemies);
             }
 
-            Debug.WriteLine(slowedfor);
+        
             for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i].Slowed)
