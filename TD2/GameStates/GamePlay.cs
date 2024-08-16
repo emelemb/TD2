@@ -88,7 +88,7 @@ namespace TD2.GameStates
             exitToMainMenuButtonPos = new Vector2(100, 200);
             exitToMainMenuButton = new Button(exitToMainMenuButtonPos, TextureManager.exitButton);
 
-            endPosition = new Vector2(800, 388);
+            endPosition = new Vector2(600, 400);
             belt = new EndOfConveyerBelt(TextureManager.orangeWip, endPosition);
           
             towerMenu = new TowerMenu();

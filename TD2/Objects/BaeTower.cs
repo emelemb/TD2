@@ -24,6 +24,8 @@ namespace TD2.Objects
         protected int dmg;
         protected int cost;
 
+        int slowedTime = 3;
+        float slowedfor = 0;
         public Point frameSize = new Point(60, 65);
         public Point currentFrame = new Point(0, 0);
         public int timeSinceLastFrame = 0;
@@ -61,7 +63,11 @@ namespace TD2.Objects
                     if (enemies[i].Alive)
                     {
                         enemies[i].Lives = enemies[i].Lives - dmg;
-                        enemies[i].Speed = enemies[i].Speed * speedReduction;
+                        if(!enemies[i].Slowed)
+                        {
+                            enemies[i].Slowed = true;
+                            enemies[i].Speed = enemies[i].Speed * speedReduction;
+                        }
                         projectiles.Remove(projectile);
 
                     }
@@ -89,6 +95,23 @@ namespace TD2.Objects
                 collision(projectile, enemies);
             }
 
+            Debug.WriteLine(slowedfor);
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].Slowed)
+                {
+                    slowedfor += gameTime.ElapsedGameTime.Milliseconds *0.001f;
+                    if(slowedfor >= slowedTime)
+                    {
+                        enemies[i].Slowed = false;
+                        enemies[i].Speed /= speedReduction;
+                        slowedfor = 0;
+                    }
+                }
+            }
+             
+
+
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame >= msPerFrame)
             {
@@ -109,10 +132,6 @@ namespace TD2.Objects
             {
                 //sb.Draw(texture, position, Color.White);
                 //    sb.Draw(texture, position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-
-
-
-
 
                 foreach (Projectile projectile in projectiles)
                 {

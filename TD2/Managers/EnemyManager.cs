@@ -89,7 +89,7 @@ namespace TD2.Managers
                 Globals.timeUntilNextWave -= gametime.ElapsedGameTime.Milliseconds * 0.001f;
             }
 
-            Debug.WriteLine(Globals.timeUntilNextWave);
+            //Debug.WriteLine(Globals.timeUntilNextWave);
 
             if (Globals.timeUntilNextWave <= 0)
             {

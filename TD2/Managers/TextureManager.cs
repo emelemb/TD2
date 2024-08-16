@@ -15,7 +15,7 @@ namespace TD2.Managers
         public static Texture2D startButton, exitButton, pauseButton, playButton;
         public static Texture2D backGround, placementTexture;
         public static Texture2D wrench, screwDriver, orangeWip, blackWip, border, orangeCA, BlackCA;
-        public static Texture2D pathTexture;
+        public static Texture2D pathTexture, convyerPos, conveyerNeg;
         public static Texture2D cpsParts, cpsDone, tbsParts, tbsDone;
         public static void Textures(ContentManager content)// might also need a graphicsDevice if its stops working in the near future tehee
         {
@@ -38,6 +38,9 @@ namespace TD2.Managers
             tbsDone = content.Load<Texture2D>("TabletDone");
 
             pathTexture = content.Load<Texture2D>("pauseButton");
+
+            convyerPos = content.Load<Texture2D>("conEndNeg");
+            conveyerNeg = content.Load<Texture2D>("conEndPos");
 
 
 

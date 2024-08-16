@@ -23,6 +23,7 @@ namespace TD2.Objects
     abstract class BaseEnemy : GameObject
     {
         protected int lives;
+        private bool slowed;
         protected int dmg;
         protected bool alive;
         protected float startSpeed;
@@ -54,6 +55,7 @@ namespace TD2.Objects
         public float Curve_curpos { get => curve_curpos; set => curve_curpos = value; }
         public float TimeSlowed { get => timeSlowed; set => timeSlowed = value; }
         public bool BeenHit { get => beenHit; set => beenHit = value; }
+        public bool Slowed { get => slowed; set => slowed = value; }
 
         public BaseEnemy(GraphicsDevice gd)
         {

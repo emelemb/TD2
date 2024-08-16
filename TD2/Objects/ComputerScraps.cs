@@ -22,6 +22,7 @@ namespace TD2.Objects
             Lives = 4;
             alive = true;
             dmg = 2;
+            Slowed = false;
         }
 
         public override void Draw(SpriteBatch sb)

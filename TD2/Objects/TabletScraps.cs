@@ -26,6 +26,7 @@ namespace TD2.Objects
             Lives = 2 * Globals.waveCount;
             dmg = 1;
             alive = true;
+            Slowed = false;
             
         }
 

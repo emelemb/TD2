@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace TD2.Objects
 {
@@ -19,6 +20,7 @@ namespace TD2.Objects
     {
         bool alive = true;
         int lives = 10;
+        bool positive;
      
             
 
@@ -36,11 +38,11 @@ namespace TD2.Objects
 
         public void collision( List<BaseEnemy> enemies)
         {
-            Debug.WriteLine(lives);
+         
             for (int i = 0; i < enemies.Count; i++)
             {    
                 if (HitBox.Intersects(enemies[i].HitBox))
-                {         
+                 {         
                     if (!enemies[i].Perish)
                     {
                         if (enemies[i].Alive)
@@ -61,7 +63,15 @@ namespace TD2.Objects
 
         public void Draw(SpriteBatch sb)
         {
-          sb.Draw(TextureManager.blackWip, new Vector2(800,388), Color.White);
+            if(positive)
+            {
+                sb.Draw(TextureManager.convyerPos, new Vector2(600, 400), Color.White);
+            }
+            if (!positive)
+            {
+                sb.Draw(TextureManager.conveyerNeg, new Vector2(600, 400), Color.White);
+            }
+
         }
 
     }
