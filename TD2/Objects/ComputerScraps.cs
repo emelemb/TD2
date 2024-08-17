@@ -18,7 +18,7 @@ namespace TD2.Objects
 
         public ComputerScraps(GraphicsDevice gd) : base(gd)
         {
-            startSpeed = 0.15f;
+            startSpeed = 0.05f;
             curve_speed = startSpeed;
             Lives = 4;
             alive = true;

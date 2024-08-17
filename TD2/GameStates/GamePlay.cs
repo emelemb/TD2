@@ -82,13 +82,13 @@ namespace TD2.GameStates
             pauseButtonPos = new Vector2(690, 20);
             pauseButton = new Button(pauseButtonPos, TextureManager.pauseButton);
 
-            resumeButtonPos = new Vector2(300, 200);
+            resumeButtonPos = new Vector2(200, 500);
             resumeButton= new Button(resumeButtonPos, TextureManager.playButton);
 
-            exitToMainMenuButtonPos = new Vector2(100, 200);
+            exitToMainMenuButtonPos = new Vector2(300, 510);
             exitToMainMenuButton = new Button(exitToMainMenuButtonPos, TextureManager.exitButton);
 
-            endPosition = new Vector2(900,600 );
+            endPosition = new Vector2(900,580 );
             belt = new EndOfConveyerBelt(TextureManager.conveyerNeg, endPosition);
           
             towerMenu = new TowerMenu();
@@ -216,15 +216,22 @@ namespace TD2.GameStates
                 case PlayStates.pause:
                     spriteBatch.Begin();
 
+                    spriteBatch.Draw(TextureManager.pauseScreen, Vector2.Zero, Color.White);
+
                     if (pauseButton.Hover)
                     {
-                        spriteBatch.Draw(TextureManager.exitButton, resumeButtonPos, Color.Gray);
+                        spriteBatch.Draw(TextureManager.playButton, resumeButtonPos, Color.Gray);
+                    }
+                    if (pauseButton.Hover)
+                    {
+                        spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.Gray);
                     }
                     else
                     {
+                        spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.White);
                         spriteBatch.Draw(TextureManager.exitButton, resumeButtonPos, Color.White);
                     }
-                        spriteBatch.Draw(TextureManager.playButton,exitToMainMenuButtonPos, Color.Purple);
+              
                     spriteBatch.End();
                     break;
             }               

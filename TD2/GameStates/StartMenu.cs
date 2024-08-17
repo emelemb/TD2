@@ -99,19 +99,12 @@ namespace TD2.GameStates
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(TextureManager.backGround, Vector2.Zero, Color.White);
+            sb.Draw(TextureManager.startScreen, Vector2.Zero, Color.White);
 
             sb.Draw(TextureManager.startButton, startButtonPos, Color.White);
             if (startButton.Hover)
             {
                 sb.Draw(TextureManager.startButton, startButtonPos, Color.Gray);
-                // rn u have to play "find the button" cause itll only show when u hover over it >:)
-            }
-
-            sb.Draw(TextureManager.infoButton, infoButtonPos, Color.White);
-            if (infoButton.Hover)
-            {
-                sb.Draw(TextureManager.infoButton, infoButtonPos, Color.Gray);
                 // rn u have to play "find the button" cause itll only show when u hover over it >:)
             }
 

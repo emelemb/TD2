@@ -21,7 +21,7 @@ namespace TD2.Objects
         
         public TabletScraps(GraphicsDevice gd) : base(gd)
         {
-            startSpeed = 0.1f;
+            startSpeed = 0.05f;
             curve_speed = startSpeed;
             Lives = 2 * Globals.waveCount;
             dmg = 1;

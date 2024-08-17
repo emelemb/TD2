@@ -133,7 +133,7 @@ namespace TD2
             ClientSize = new System.Drawing.Size(481, 308);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(label2);
+            Controls.Add(label2); 
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);

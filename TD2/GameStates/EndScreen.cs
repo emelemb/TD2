@@ -41,7 +41,7 @@ namespace TD2.GameStates
         {
             GetMousePos();
 
-             if (exitButton.HitBox.Contains(mousePoint))
+            if (exitButton.HitBox.Contains(mousePoint))
             {
                 exitButton.Hover = true;
 
@@ -54,10 +54,25 @@ namespace TD2.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();   
-                spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);   
-            spriteBatch.End();
-        }
+            spriteBatch.Begin();
+            if (Globals.lives <= 0)
+            {
 
+                spriteBatch.Draw(TextureManager.loseScreen, new Vector2(0, 0), Color.White);
+                spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);
+            }
+
+            else
+            {
+
+                spriteBatch.Draw(TextureManager.winScreen, new Vector2(0, 0), Color.White);
+                spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);
+
+
+            }
+
+            spriteBatch.End();
+
+        }
     }
 }

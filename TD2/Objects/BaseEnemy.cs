@@ -61,7 +61,7 @@ namespace TD2.Objects
         {
            texture = TextureManager.screwDriver;
             this.gd = gd;
-            float tension_carpath = 1f; // 0 = sharp turns, 0.5 = moderate turns, 1 = soft turns
+            float tension_carpath = 0f; // 0 = sharp turns, 0.5 = moderate turns, 1 = soft turns
             cpath_moving = new CatmullRomPath(gd, tension_carpath);
             cpath_moving.Clear();
 

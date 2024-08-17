@@ -253,6 +253,18 @@
 /processorParam:TextureFormat=Color
 /build:InfoButton.png
 
+#begin loseScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:loseScreen.png
+
 #begin newWipc.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -289,6 +301,18 @@
 /processorParam:TextureFormat=Color
 /build:orangeWip.png
 
+#begin path.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:path.png
+
 #begin pauseButton.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -301,6 +325,18 @@
 /processorParam:TextureFormat=Color
 /build:pauseButton.png
 
+#begin pauseMeny.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:pauseMeny.png
+
 #begin playButton.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -312,18 +348,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:playButton.png
-
-#begin QuitButton.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:QuitButton.png
 
 #begin QuitButton.png
 /importer:TextureImporter
@@ -380,6 +404,18 @@
 /processorParam:TextureFormat=Color
 /build:startButton.png
 
+#begin startScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:startScreen.png
+
 #begin TabletDone.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -403,6 +439,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:tabletNot.png
+
+#begin winScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:winScreen.png
 
 #begin wrench.png
 /importer:TextureImporter

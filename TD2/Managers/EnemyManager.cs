@@ -22,8 +22,8 @@ namespace TD2.Managers
         float delayC = 2000f;
         int timeSinceLast;
         int time;
-        int tabletAmount = 0;
-        int computerAmount = 1;
+        int tabletAmount = 6;
+        int computerAmount = 4;
         float wave2 = 20000;
 
 

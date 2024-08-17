@@ -23,7 +23,7 @@ namespace TD2
         {
             levelNr += 1;
             this.gd = gd;
-            float tension_road = 0.5f; // 0 = sharp turns, 0.5 = moderate turns, 1 = soft turns
+            float tension_road = 0f; // 0 = sharp turns, 0.5 = moderate turns, 1 = soft turns
             cpath_road = new CatmullRomPath(gd, tension_road);
 
             cpath_road.Clear();

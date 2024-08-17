@@ -69,7 +69,7 @@ namespace TD2
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Gray);
 
           
             gameStateManager.Draw(_spriteBatch);
