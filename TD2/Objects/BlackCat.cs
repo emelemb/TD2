@@ -17,7 +17,7 @@ namespace TD2.Objects
     {
         public BlackCat(Texture2D tex, Vector2 pos) : base(tex, pos)
         {
-            delay = 1500;
+            delay = 800;
             cost = 100;
             position = pos;
             dmg = 1;
@@ -31,7 +31,8 @@ namespace TD2.Objects
 
         public override void AddProjectile(Vector2 position)
         {
-            Wrench wrench = new Wrench(TextureManager.wrench,position);
+            Vector2 projectilPos = new Vector2(position.X + 30, position.Y + 40);
+            Wrench wrench = new Wrench(TextureManager.wrench,projectilPos);
             projectiles.Add(wrench);
         }
 

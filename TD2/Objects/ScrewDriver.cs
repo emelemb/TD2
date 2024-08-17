@@ -14,7 +14,7 @@ namespace TD2.Objects
     {
         public ScrewDriver(Texture2D tex, Vector2 pos) : base(tex, pos)
         {
-            speed = 5.0f;
+            speed = 2.5f;
             texture = TextureManager.screwDriver;
             
         }

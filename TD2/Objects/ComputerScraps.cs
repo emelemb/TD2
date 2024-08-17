@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using TD2.Objects;
 using SharpDX.MediaFoundation;
 using System.Diagnostics;
+using TD2.Utilities;
 
 namespace TD2.Objects
 {
@@ -18,9 +19,9 @@ namespace TD2.Objects
 
         public ComputerScraps(GraphicsDevice gd) : base(gd)
         {
-            startSpeed = 0.05f;
+            startSpeed = 0.035f;
             curve_speed = startSpeed;
-            Lives = 4;
+            Lives = 1 * Globals.waveCount;
             alive = true;
             dmg = 2;
             Slowed = false;

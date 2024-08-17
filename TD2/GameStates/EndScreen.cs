@@ -24,7 +24,7 @@ namespace TD2.GameStates
 
         public void LoadContent(ContentManager content)
         {
-            exitButtonPos = new Vector2(0, 200);
+            exitButtonPos = new Vector2(400, 500);
             exitButton = new Button(exitButtonPos, TextureManager.exitButton);
         }
 

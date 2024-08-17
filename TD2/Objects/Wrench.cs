@@ -13,7 +13,7 @@ namespace TD2.Objects
     {
         public Wrench(Texture2D tex, Vector2 pos) : base(tex, pos)
         {
-            speed = 10.0f;
+            speed = 5.0f;
             texture = TextureManager.wrench;
         }
 

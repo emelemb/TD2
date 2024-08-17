@@ -18,8 +18,8 @@ namespace TD2.Managers
         public List<BaseEnemy> enemies;
         bool spawnOk = true;
         GraphicsDevice graphicsDevice;
-        float delayT = 2000f;
-        float delayC = 2000f;
+        float delayT = 4000f;
+        float delayC = 6000f;
         int timeSinceLast;
         int time;
         int tabletAmount = 6;

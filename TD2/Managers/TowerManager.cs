@@ -98,6 +98,7 @@ namespace TD2.Managers
                     // If left-clicked, add the tower at the current mouse position
                     towerPos = Globals.mousePos;
                           Globals.canMove = false;
+                    Vector2 projectilPos = new Vector2(towerPos.X+30, towerPos.Y+35);
                     AddTower(towerPos);
               
                 }

@@ -36,13 +36,10 @@ namespace TD2.GameStates
             TextureManager.Textures(content);
 
 
-            startButtonPos = new Vector2(450, 200);
+            startButtonPos = new Vector2(450, 400);
             startButton = new Button( startButtonPos, TextureManager.startButton);
 
-            infoButtonPos = new Vector2(430, 270);
-            infoButton = new Button( infoButtonPos, TextureManager.infoButton );    
-
-            exitButtonPos = new Vector2(450, 340);
+            exitButtonPos = new Vector2(450, 540);
             exitButton = new Button( exitButtonPos, TextureManager.exitButton);
         }
 
@@ -69,15 +66,6 @@ namespace TD2.GameStates
                 }
             }
 
-            if (infoButton.HitBox.Contains(mousePoint))
-            {
-                infoButton.Hover = true;
-
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed &&infoButton.HitBox.Contains(mousePoint))
-                {
-                   // state = GameStateManager.GameStates.GamePlay;
-                }
-            }
 
             else if (exitButton.HitBox.Contains(mousePoint))
             {
@@ -92,7 +80,6 @@ namespace TD2.GameStates
             {
                 startButton.Hover = false;
                 exitButton.Hover = false;
-                infoButton.Hover = false;
             }
         }
 

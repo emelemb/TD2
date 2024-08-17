@@ -75,6 +75,17 @@ namespace TD2.Objects
             }
         }
 
+        public void checkProjectileRange()
+        {
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                if (projectiles[i].OutOfRange)
+                    projectiles.Remove(projectiles[i]);                  
+            }
+        }
+
+
+
         public abstract void UpgradeTower();
         public abstract void AddProjectile(Vector2 position);
 
@@ -95,7 +106,8 @@ namespace TD2.Objects
                 collision(projectile, enemies);
             }
 
-        
+            checkProjectileRange();
+
             for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i].Slowed)
