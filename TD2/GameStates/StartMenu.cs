@@ -23,9 +23,11 @@ namespace TD2.GameStates
     {
         Button startButton;
         Button exitButton;
+        Button infoButton;
 
         Vector2 startButtonPos;
         Vector2 exitButtonPos;
+        Vector2 infoButtonPos;
 
         Point mousePoint;
 
@@ -37,7 +39,10 @@ namespace TD2.GameStates
             startButtonPos = new Vector2(450, 200);
             startButton = new Button( startButtonPos, TextureManager.startButton);
 
-            exitButtonPos = new Vector2(450, 300);
+            infoButtonPos = new Vector2(430, 270);
+            infoButton = new Button( infoButtonPos, TextureManager.infoButton );    
+
+            exitButtonPos = new Vector2(450, 340);
             exitButton = new Button( exitButtonPos, TextureManager.exitButton);
         }
 
@@ -64,6 +69,16 @@ namespace TD2.GameStates
                 }
             }
 
+            if (infoButton.HitBox.Contains(mousePoint))
+            {
+                infoButton.Hover = true;
+
+                if (Mouse.GetState().LeftButton == ButtonState.Pressed &&infoButton.HitBox.Contains(mousePoint))
+                {
+                   // state = GameStateManager.GameStates.GamePlay;
+                }
+            }
+
             else if (exitButton.HitBox.Contains(mousePoint))
             {
                 exitButton.Hover = true;
@@ -77,6 +92,7 @@ namespace TD2.GameStates
             {
                 startButton.Hover = false;
                 exitButton.Hover = false;
+                infoButton.Hover = false;
             }
         }
 
@@ -89,6 +105,13 @@ namespace TD2.GameStates
             if (startButton.Hover)
             {
                 sb.Draw(TextureManager.startButton, startButtonPos, Color.Gray);
+                // rn u have to play "find the button" cause itll only show when u hover over it >:)
+            }
+
+            sb.Draw(TextureManager.infoButton, infoButtonPos, Color.White);
+            if (infoButton.Hover)
+            {
+                sb.Draw(TextureManager.infoButton, infoButtonPos, Color.Gray);
                 // rn u have to play "find the button" cause itll only show when u hover over it >:)
             }
 

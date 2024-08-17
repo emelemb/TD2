@@ -12,7 +12,7 @@ namespace TD2.Managers
 {
     public static class TextureManager
     {
-        public static Texture2D startButton, exitButton, pauseButton, playButton;
+        public static Texture2D startButton, exitButton, pauseButton, playButton, infoButton;
         public static Texture2D backGround, placementTexture;
         public static Texture2D wrench, screwDriver, orangeWip, blackWip, border, orangeCA, BlackCA;
         public static Texture2D pathTexture, convyerPos, conveyerNeg;
@@ -24,6 +24,7 @@ namespace TD2.Managers
             exitButton = content.Load<Texture2D>("QuitButton");
             pauseButton = content.Load<Texture2D>("pauseButton");
             playButton = content.Load<Texture2D>("playButton");
+            infoButton = content.Load<Texture2D>("InfoButton");
 
             orangeCA = content.Load<Texture2D>("orangecatani");
              BlackCA = content.Load<Texture2D>("bcannime");
