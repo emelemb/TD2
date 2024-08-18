@@ -44,7 +44,7 @@ namespace TD2.Managers
             sb.Draw(TextureManager.border, new Vector2(0,0), Color.White);
             sb.DrawString(font, " " + Globals.waveCount, new Vector2(892, 374), Color.White);
             sb.DrawString(font," " + Globals.money, new Vector2(890, 99), Color.White);
-            sb.DrawString(font, " " + time, new Vector2(887, 312), Color.White);
+            sb.DrawString(font, " " + time, new Vector2(885, 312), Color.White);
             sb.DrawString(font, " " + Globals.lives, new Vector2(895, 226), Color.White);
         }
 
