@@ -17,7 +17,7 @@ namespace TD2.Objects
         protected float speed;
         float rotation = 0f;
         bool outOfRange = false;
-        Vector2 range = new Vector2 (90,0);
+        Vector2 range = new Vector2 (130,0);
         Vector2 startPos;
 
         public bool OutOfRange { get => outOfRange; set => outOfRange = value; }

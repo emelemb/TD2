@@ -130,7 +130,7 @@ namespace TD2.GameStates
                 {
                     pauseButton.Hover = true;
 
-                    if (Mouse.GetState().LeftButton == ButtonState.Pressed && pauseButton.HitBox.Contains(mousePoint))
+                    if (Mouse.GetState().LeftButton == ButtonState.Pressed && pauseButton.HitBox.Contains(mousePoint)) 
                     {
                         playState = PlayStates.pause;
                     }
@@ -193,7 +193,7 @@ namespace TD2.GameStates
                         state = GameStateManager.GameStates.EndScreen;
                     }
 
-                    if(Globals.waveCount >= 10)
+                    if(Globals.waveCount >= 11)
                     {
                         state = GameStateManager.GameStates.EndScreen;
                     }

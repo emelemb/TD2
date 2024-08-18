@@ -24,7 +24,7 @@ namespace TD2.GameStates
 
         public void LoadContent(ContentManager content)
         {
-            exitButtonPos = new Vector2(400, 650);
+            exitButtonPos = new Vector2(450, 520);
             exitButton = new Button(exitButtonPos, TextureManager.exitButton);
         }
 
@@ -50,6 +50,7 @@ namespace TD2.GameStates
                     Globals.Exit = true;
                 }
             }
+            else { exitButton.Hover = false; }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -58,13 +59,15 @@ namespace TD2.GameStates
             if (Globals.lives <= 0)
             {
                 spriteBatch.Draw(TextureManager.loseScreen, new Vector2(0, 0), Color.White);
-                spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);
+          
             }
             else
             {
                 spriteBatch.Draw(TextureManager.winScreen, new Vector2(0, 0), Color.White);
-                spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);
+              
             }
+            if (exitButton.Hover) { spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray); }
+            else { spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.White); }
 
             spriteBatch.End();
 

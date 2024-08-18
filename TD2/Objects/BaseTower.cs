@@ -63,11 +63,11 @@ namespace TD2.Objects
                     if (enemies[i].Alive)
                     {
                         enemies[i].Lives = enemies[i].Lives - dmg;
-
+                        if (!enemies[i].Slowed)
+                        {
                             enemies[i].Slowed = true;
                             enemies[i].Speed = enemies[i].Speed * speedReduction;
-
-                        
+                        }                   
                         projectiles.Remove(projectile);
 
                     }

@@ -18,7 +18,7 @@ namespace TD2.Objects
             position = pos;
             dmg = 2;
             cost = 200;
-            speedReduction = 0.3f;
+            speedReduction = 0.5f;
      
         }
 

@@ -26,9 +26,9 @@ namespace TD2.Utilities
         public static Point mousePoint;
 
         public static int waveCount = 0;
-        public static float timeUntilNextWave = 20;
+        public static float timeUntilNextWave = 17;
 
-       public static int lives;
+        public static int lives;
 
         public static bool upgradeBlackCat = false;
         public static bool upgradeOrangeCat = false;
