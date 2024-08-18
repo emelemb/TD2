@@ -60,7 +60,6 @@ namespace TD2.GameStates
                 spriteBatch.Draw(TextureManager.loseScreen, new Vector2(0, 0), Color.White);
                 spriteBatch.Draw(TextureManager.exitButton, exitButtonPos, Color.Gray);
             }
-
             else
             {
                 spriteBatch.Draw(TextureManager.winScreen, new Vector2(0, 0), Color.White);

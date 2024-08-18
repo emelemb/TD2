@@ -54,7 +54,6 @@ namespace TD2.Managers
                     break;
                 case GameStates.GamePlay:
                     GamePlay.Update(gameTime);
-                 // add collisionhandler here aswell when u have it 
                     break;
                 case GameStates.EndScreen:
                     EndScreen.Update(gameTime);

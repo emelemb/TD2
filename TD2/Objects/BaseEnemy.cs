@@ -88,7 +88,6 @@ namespace TD2.Objects
               alive = false; 
                
             }
-
         }
 
         public virtual void Draw(SpriteBatch sb)

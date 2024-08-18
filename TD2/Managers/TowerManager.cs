@@ -88,8 +88,7 @@ namespace TD2.Managers
                 towerPos = Globals.mousePos;
                 Globals.spawnTower = false;
             }
-            //Debug.WriteLine(Globals.mousePos);
-            // Debug.WriteLine(towerList.Count);
+    
 
             if (Globals.canMove)
             {
@@ -117,12 +116,6 @@ namespace TD2.Managers
                 B.Draw(spriteBatch);
 
             }
-
-            //foreach (OrangeCat O in towerList)
-            //{
-            //    O.Draw(spriteBatch);
-
-            //}
 
         
 

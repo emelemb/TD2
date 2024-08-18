@@ -53,11 +53,6 @@ namespace TD2.Managers
             winScreen = content.Load<Texture2D>("winScreen");
             pauseScreen = content.Load<Texture2D>("pauseMeny");
 
-            //screwDriver= content.Load<Texture2D>("ScrewDriver");
-
-            // playerTex = content.Load<Texture2D>("lmao"); finns inte endast för att komma ihåg hur mna gör lmao
-
-            // FYI DU HAR INTE CARPATH1 DU HAR SplineCurve
         }
 
 
