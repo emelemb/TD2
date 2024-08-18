@@ -10,7 +10,7 @@ using TD2.Utilities;
 
 namespace TD2.Objects
 {
-    internal class OrangeCat : BaeTower
+    internal class OrangeCat : BaseTower
     {
         public OrangeCat(Texture2D tex, Vector2 pos) : base(tex, pos)
         {
@@ -20,11 +20,6 @@ namespace TD2.Objects
             cost = 200;
             speedReduction = 0.3f;
      
-        }
-
-        public override void UpgradeTower()
-        {
-            dmg += 1;
         }
 
         public override void AddProjectile(Vector2 pos)

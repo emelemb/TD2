@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace TD2.Objects
 {
-    internal class BlackCat : BaeTower
+    internal class BlackCat : BaseTower
     {
         public BlackCat(Texture2D tex, Vector2 pos) : base(tex, pos)
         {
@@ -24,10 +24,6 @@ namespace TD2.Objects
             speedReduction = 1.0f;
         }
 
-        public override void UpgradeTower()
-        {
-            dmg += 1;
-        }
 
         public override void AddProjectile(Vector2 position)
         {

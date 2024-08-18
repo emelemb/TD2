@@ -21,8 +21,6 @@ namespace TD2.Objects
         bool alive = true;
         int lives = 10;
         bool positive;
-     
-            
 
         public int Lives { get { return lives; } }
         public EndOfConveyerBelt(Texture2D texture, Vector2 position)
@@ -34,6 +32,7 @@ namespace TD2.Objects
         public void Update(GameTime gametime)
         {
             Globals.lives = lives;
+
         }
 
         public void collision( List<BaseEnemy> enemies)
@@ -62,16 +61,8 @@ namespace TD2.Objects
         }
 
         public void Draw(SpriteBatch sb)
-        {
-            if(positive)
-            {
-                sb.Draw(TextureManager.convyerPos, HitBox, Color.White);
-            }
-            if (!positive)
-            {
-                sb.Draw(TextureManager.conveyerNeg,HitBox, Color.White);
-            }
-
+        {    
+         sb.Draw(TextureManager.conveyerNeg,HitBox, Color.White);
         }
 
     }

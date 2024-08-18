@@ -73,6 +73,26 @@ namespace TD2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap screw {
+            get {
+                object obj = ResourceManager.GetObject("screw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap screw1 {
+            get {
+                object obj = ResourceManager.GetObject("screw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Untitled_Artwork__1_ {
             get {
                 object obj = ResourceManager.GetObject("Untitled_Artwork (1)", resourceCulture);

@@ -23,7 +23,7 @@ namespace TD2.Managers
     internal class TowerManager
     {
 
-        List<BaeTower> towerList;
+        List<BaseTower> towerList;
         public Vector2 towerPos;
         EnemyManager enemyManager;
         GamePlay gameplay;
@@ -36,7 +36,7 @@ namespace TD2.Managers
         //LaserManager laserManager;
         public TowerManager(EnemyManager enemyManager, GamePlay gameplay)
         {
-            towerList = new List<BaeTower>();
+            towerList = new List<BaseTower>();
             this.enemyManager = enemyManager;
             this.gameplay = gameplay;
             
@@ -49,11 +49,11 @@ namespace TD2.Managers
 
         public void AddTower(Vector2 pos)
         {
-            BaeTower tower = null;
+            BaseTower tower = null;
             switch (Globals.currentType)
             {
                 case Globals.TowerType.mage:
-                    BaeTower mage = new BlackCat(TextureManager.placementTexture, pos);
+                    BaseTower mage = new BlackCat(TextureManager.placementTexture, pos);
                     mage.active = true;
                     tower = mage;
                     if (tower != null && gameplay.CanPlace(tower))
@@ -64,7 +64,7 @@ namespace TD2.Managers
                     break;
 
                 case Globals.TowerType.other:
-                    BaeTower other = new OrangeCat(TextureManager.placementTexture, pos);
+                    BaseTower other = new OrangeCat(TextureManager.placementTexture, pos);
                     other.active = true;
                     tower = other;
                     if (tower != null && gameplay.CanPlace(tower))
@@ -103,7 +103,7 @@ namespace TD2.Managers
               
                 }
             }
-            foreach( BaeTower b in towerList)
+            foreach( BaseTower b in towerList)
             {       
                     b.update(gameTime, enemies);
             }
@@ -112,7 +112,7 @@ namespace TD2.Managers
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (BaeTower B in towerList)
+            foreach (BaseTower B in towerList)
             {
                 B.Draw(spriteBatch);
 

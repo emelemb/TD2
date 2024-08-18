@@ -23,9 +23,10 @@ namespace TD2.Objects
             curve_speed = startSpeed;
             Lives = 1 * Globals.waveCount;
             alive = true;
-            dmg = 2;
+            dmg = 3;
             Slowed = false;
         }
+
 
         public override void Draw(SpriteBatch sb)
         {

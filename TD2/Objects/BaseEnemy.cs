@@ -82,15 +82,6 @@ namespace TD2.Objects
                 Curve_curpos += curve_speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
 
-           
-
-
-
-            // Step our location forward along the curve forward
-
-            //// Reset if we reach the end
-            ///
-            // if (curve_curpos > 1.0f) curve_curpos = 0.0f;
 
             if (lives <= 0)
             { 

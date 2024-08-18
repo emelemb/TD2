@@ -19,7 +19,7 @@ using System.Data.SqlTypes;
 
 namespace TD2.Objects
 {
-    abstract class BaeTower : GameObject
+    abstract class BaseTower : GameObject
     {
         protected int dmg;
         protected int cost;
@@ -29,7 +29,7 @@ namespace TD2.Objects
         public Point frameSize = new Point(68,75);
         public Point currentFrame = new Point(0, 0);
         public int timeSinceLastFrame = 0;
-        public int msPerFrame = 300;
+        public int msPerFrame = 250;
         public Point walkingSheet = new Point(4, 1);
 
 
@@ -47,7 +47,7 @@ namespace TD2.Objects
 
         Texture2D placeTex;
 
-        public BaeTower(Texture2D tex, Vector2 pos) 
+        public BaseTower(Texture2D tex, Vector2 pos) 
         {  
             texture = tex;
             towerIsPLaced = false; // Store position independently
@@ -74,7 +74,6 @@ namespace TD2.Objects
                 }
             }
         }
-
         public void checkProjectileRange()
         {
             for (int i = 0; i < projectiles.Count; i++)
@@ -84,9 +83,6 @@ namespace TD2.Objects
             }
         }
 
-
-
-        public abstract void UpgradeTower();
         public abstract void AddProjectile(Vector2 position);
 
         public void update(GameTime gameTime, List<BaseEnemy> enemies)
@@ -108,24 +104,6 @@ namespace TD2.Objects
 
             checkProjectileRange();
 
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                //if (enemies[i].Slowed)
-                //{
-                //    //slowedfor += gameTime.ElapsedGameTime.Milliseconds *0.001f;
-                //    //if(slowedfor >= slowedTime)
-                //    //{
-                //    //    enemies[i].Slowed = false;
-                //    //    enemies[i].Speed /= speedReduction;
-                //    //    slowedfor = 0;
-                //    //}
-                //}
-            }
-
-            slowedfor += gameTime.ElapsedGameTime.Milliseconds * 0.001f;
-
-
-
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame >= msPerFrame)
             {
@@ -144,9 +122,6 @@ namespace TD2.Objects
         {
             if (active)
             {
-                //sb.Draw(texture, position, Color.White);
-                //    sb.Draw(texture, position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-
                 foreach (Projectile projectile in projectiles)
                 {
                     projectile.Draw(sb);

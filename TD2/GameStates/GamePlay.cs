@@ -25,6 +25,7 @@ namespace TD2.GameStates
         Button pauseButton;
         Button resumeButton;
         Button exitToMainMenuButton;
+        animation animation;
         Lvl lvl;
         WIPTower wipTower;
         public GraphicsDevice graphicsDevice;
@@ -37,7 +38,7 @@ namespace TD2.GameStates
         Vector2 endPosition;
         EndOfConveyerBelt belt;
 
-        BaeTower tower;
+        BaseTower tower;
         TowerMenu towerMenu;
         Vector2 exitToMainMenuButtonPos;
         Vector2 resumeButtonPos;
@@ -53,6 +54,8 @@ namespace TD2.GameStates
             renderTarget = new RenderTarget2D(graphicsDevice, screenWidth, screenHeight);
             wipTower = new WIPTower(TextureManager.startButton, Globals.mousePos);
             UI = new UI();
+            animation = new animation();
+    
         }
         internal enum PlayStates
         {
@@ -75,9 +78,6 @@ namespace TD2.GameStates
         {
             towerManager.LoadContent(content);      
             UI.LoadContent(content);    
-            //carManager = new CarManager(Game1._graphics.GraphicsDevice);
-            //policeManager = new PoliceManager();
-            //policeManager.AddPolice(new Vector2(400, 100));
 
             pauseButtonPos = new Vector2(690, 20);
             pauseButton = new Button(pauseButtonPos, TextureManager.pauseButton);
@@ -94,7 +94,7 @@ namespace TD2.GameStates
             towerMenu = new TowerMenu();
         }
 
-        public bool CanPlace(BaeTower tower)
+        public bool CanPlace(BaseTower tower)
         {
             if (waveActive()) { return false; }
             if(tower.HitBox.Intersects(UI.Bounds))
@@ -123,35 +123,50 @@ namespace TD2.GameStates
 
         public void ButtonsLogic()
         {
-            if (pauseButton.HitBox.Contains(mousePoint))
+            GetMousePos();
+            if (playState == PlayStates.play)
             {
-                pauseButton.Hover = true;
-
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed && pauseButton.HitBox.Contains(mousePoint))
+                if (pauseButton.HitBox.Contains(mousePoint))
                 {
-                    playState = PlayStates.pause;
+                    pauseButton.Hover = true;
+
+                    if (Mouse.GetState().LeftButton == ButtonState.Pressed && pauseButton.HitBox.Contains(mousePoint))
+                    {
+                        playState = PlayStates.pause;
+                    }
+                }
+                else
+                {
+                    pauseButton.Hover = false;
                 }
             }
 
-            if (resumeButton.HitBox.Contains(mousePoint))
+            if (playState == PlayStates.pause)
             {
-                resumeButton.Hover = true;
-
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed && resumeButton.HitBox.Contains(mousePoint))
+                if (resumeButton.HitBox.Contains(mousePoint))
                 {
-                    playState = PlayStates.play;
+                    resumeButton.Hover = true;
+
+                    if (Mouse.GetState().LeftButton == ButtonState.Pressed && resumeButton.HitBox.Contains(mousePoint))
+                    {
+                        playState = PlayStates.play;
+                    }
                 }
-
-            }
-            if (exitToMainMenuButton.HitBox.Contains(mousePoint))
-            {
-                exitToMainMenuButton.Hover = true;
-
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed && exitToMainMenuButton.HitBox.Contains(mousePoint))
+                else if (exitToMainMenuButton.HitBox.Contains(mousePoint))
                 {
-                    state = GameStateManager.GameStates.StartMenu;
-                    playState = PlayStates.play;
+                    exitToMainMenuButton.Hover = true;
+
+                    if (Mouse.GetState().LeftButton == ButtonState.Pressed && exitToMainMenuButton.HitBox.Contains(mousePoint))
+                    {
+                        state = GameStateManager.GameStates.StartMenu;
+                        playState = PlayStates.play;
+                    }
                 }
+                else
+                {
+                    resumeButton.Hover = false;
+                    exitToMainMenuButton.Hover = false;
+                }                    
             }
         }
 
@@ -170,10 +185,9 @@ namespace TD2.GameStates
                     belt.collision(enemyManager.enemies);
                     belt.Update(gameTime);
                     UI.Update(gameTime );
-                    ButtonsLogic();
+                    animation.update(gameTime);
+                    ButtonsLogic();              
                    
-                    
-
                     if (belt.Lives <= 0)
                     {
                         state = GameStateManager.GameStates.EndScreen;
@@ -195,43 +209,41 @@ namespace TD2.GameStates
         }
 
         public void Draw(SpriteBatch spriteBatch)
-        {
-          
-          
+        { 
             switch (playState)
             { 
                 case PlayStates.play:
                     drawOnRendertarget(spriteBatch);
                     spriteBatch.Begin();
-                    //BaseEnemy.Draw(spriteBatch);
                     spriteBatch.Draw(TextureManager.backGround, Vector2.Zero, Color.White);
                     spriteBatch.Draw(renderTarget, Vector2.Zero, Color.White);
                     wipTower.Draw(spriteBatch);
                     enemyManager.Draw(spriteBatch);
                     UI.Draw(spriteBatch);
-                    spriteBatch.Draw(TextureManager.pauseButton, pauseButtonPos, Color.White);
+          
+
+                    if (pauseButton.Hover)
+                    {
+                        spriteBatch.Draw(TextureManager.pauseButton, pauseButtonPos, Color.Gray);
+                    }
+                    else { spriteBatch.Draw(TextureManager.pauseButton, pauseButtonPos, Color.White); }
                     spriteBatch.End();
                     break;
 
                 case PlayStates.pause:
                     spriteBatch.Begin();
-
                     spriteBatch.Draw(TextureManager.pauseScreen, Vector2.Zero, Color.White);
-
-                    if (pauseButton.Hover)
-                    {
-                        spriteBatch.Draw(TextureManager.playButton, resumeButtonPos, Color.Gray);
-                    }
-                    if (pauseButton.Hover)
-                    {
-                        spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.Gray);
-                    }
+                    if (exitToMainMenuButton.Hover)
+                    { spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.Gray);}
                     else
-                    {
-                        spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.White);
-                        spriteBatch.Draw(TextureManager.exitButton, resumeButtonPos, Color.White);
-                    }
-              
+                    {spriteBatch.Draw(TextureManager.exitButton, exitToMainMenuButtonPos, Color.White);}
+
+                    if (resumeButton.Hover)
+                    { spriteBatch.Draw(TextureManager.playButton,resumeButtonPos, Color.Gray); }
+                    else
+                    { spriteBatch.Draw(TextureManager.playButton, resumeButtonPos, Color.White); }
+
+
                     spriteBatch.End();
                     break;
             }               
@@ -242,9 +254,12 @@ namespace TD2.GameStates
             graphicsDevice.SetRenderTarget(renderTarget);
             graphicsDevice.Clear(Color.Transparent);
             spriteBatch.Begin();
+            animation.Draw(spriteBatch);
             lvl.Draw(spriteBatch);
             towerManager.Draw(spriteBatch);
             belt.Draw(spriteBatch);
+         
+
             spriteBatch.End();
 
             graphicsDevice.SetRenderTarget(null);

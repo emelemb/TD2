@@ -15,7 +15,7 @@ namespace TD2.Managers
         public static Texture2D startButton, exitButton, pauseButton, playButton, infoButton;
         public static Texture2D backGround, placementTexture;
         public static Texture2D wrench, screwDriver, orangeWip, blackWip, border, orangeCA, BlackCA;
-        public static Texture2D pathTexture, convyerPos, conveyerNeg;
+        public static Texture2D pathTexture, convyerPos, conveyerNeg, conveyerAnime;
         public static Texture2D cpsParts, cpsDone, tbsParts, tbsDone, hp;
         public static Texture2D startScreen, pauseScreen, loseScreen, winScreen;
         public static void Textures(ContentManager content)// might also need a graphicsDevice if its stops working in the near future tehee
@@ -31,8 +31,8 @@ namespace TD2.Managers
              BlackCA = content.Load<Texture2D>("bcannime");
             wrench = content.Load<Texture2D>("wrench");
             screwDriver = content.Load<Texture2D>("screwdriver");
-            orangeWip = content.Load<Texture2D>("orangeWip");
-            blackWip = content.Load<Texture2D>("blackWip");
+            orangeWip = content.Load<Texture2D>("Wipo");
+            blackWip = content.Load<Texture2D>("Wip");
 
             cpsParts = content.Load<Texture2D>("compterNot");
             cpsDone = content.Load<Texture2D>("computerDone");
@@ -40,14 +40,13 @@ namespace TD2.Managers
             tbsDone = content.Load<Texture2D>("TabletDone");
             hp = content.Load<Texture2D>("hp");
 
+            conveyerNeg = content.Load<Texture2D>("conEndNeg");
 
             pathTexture = content.Load<Texture2D>("path");
-
-            convyerPos = content.Load<Texture2D>("conEndNeg");
-            conveyerNeg = content.Load<Texture2D>("conEndPos");
+            conveyerAnime = content.Load<Texture2D>("conveyerAnime");
 
             border = content.Load<Texture2D>("bg");
-            placementTexture = content.Load<Texture2D>("BlackCat");
+            placementTexture = content.Load<Texture2D>("Wip");
 
             startScreen = content.Load<Texture2D>("startScreen");
             loseScreen = content.Load<Texture2D>("loseScreen");
