@@ -21,7 +21,7 @@ namespace TD2.Objects
             cost = 100;
             position = pos;
             dmg = 1;
-            speedReduction = 1.01f;
+            speedReduction = 1.0f;
         }
 
         public override void UpgradeTower()

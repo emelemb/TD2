@@ -21,6 +21,7 @@ namespace TD2.Managers
         float delayT = 4000f;
         float delayC = 6000f;
         int timeSinceLast;
+        int timeSinceLastc;
         int time;
         int tabletAmount = 6;
         int computerAmount = 4;
@@ -47,7 +48,7 @@ namespace TD2.Managers
             }
 
             timeSinceLast += gametime.ElapsedGameTime.Milliseconds;
-            if (tabletAmount < enemies.Count)
+            if (tabletAmount + computerAmount < enemies.Count)
             {
                 spawnOk = false;
             }
@@ -57,16 +58,18 @@ namespace TD2.Managers
         {
             for (int i = 0; i < computerAmount; i++)
             {
-                if (timeSinceLast >= delayC)
+                if (timeSinceLastc >= delayC)
                 {
                     BaseEnemy cps = new ComputerScraps(graphicsDevice);
                     enemies.Add(cps);
-                    timeSinceLast = 0;
+                    timeSinceLastc = 0;
                 }
             }
 
             timeSinceLast += gametime.ElapsedGameTime.Milliseconds;
-            if (computerAmount < enemies.Count)
+            timeSinceLastc += gametime.ElapsedGameTime.Milliseconds;
+
+            if (computerAmount + tabletAmount < enemies.Count)
             {
                 spawnOk = false;
             }

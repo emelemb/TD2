@@ -19,7 +19,7 @@ namespace TD2.Objects
 
         public ComputerScraps(GraphicsDevice gd) : base(gd)
         {
-            startSpeed = 0.035f;
+            startSpeed = 0.03f;
             curve_speed = startSpeed;
             Lives = 1 * Globals.waveCount;
             alive = true;
@@ -40,7 +40,7 @@ namespace TD2.Objects
 
                     for (int i = 0; i < lives; i++)
                     {
-                        sb.Draw(TextureManager.hp, new Vector2(posX, position.Y + 50), Color.White);
+                        sb.Draw(TextureManager.hp, new Vector2(posX+20, position.Y), Color.White);
                         posX += TextureManager.hp.Width;
                     }
                 }

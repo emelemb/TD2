@@ -42,7 +42,7 @@ namespace TD2.Objects
 
                     for (int i = 0; i < lives; i++) 
                     { 
-                       sb.Draw(TextureManager.hp, new Vector2(posX, position.Y + 100), Color.White);
+                       sb.Draw(TextureManager.hp, new Vector2(posX, position.Y + 30), Color.White);
                         posX += TextureManager.hp.Width;
 
                     }

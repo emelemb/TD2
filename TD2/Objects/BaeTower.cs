@@ -53,7 +53,7 @@ namespace TD2.Objects
             towerIsPLaced = false; // Store position independently
             active = false;           
         }
-
+ 
         public void collision(Projectile projectile, List<BaseEnemy> enemies)
         {
             for (int i = 0; i < enemies.Count; i++)
@@ -63,11 +63,11 @@ namespace TD2.Objects
                     if (enemies[i].Alive)
                     {
                         enemies[i].Lives = enemies[i].Lives - dmg;
-                        if(!enemies[i].Slowed)
-                        {
+
                             enemies[i].Slowed = true;
                             enemies[i].Speed = enemies[i].Speed * speedReduction;
-                        }
+
+                        
                         projectiles.Remove(projectile);
 
                     }
@@ -110,18 +110,20 @@ namespace TD2.Objects
 
             for (int i = 0; i < enemies.Count; i++)
             {
-                if (enemies[i].Slowed)
-                {
-                    slowedfor += gameTime.ElapsedGameTime.Milliseconds *0.001f;
-                    if(slowedfor >= slowedTime)
-                    {
-                        enemies[i].Slowed = false;
-                        enemies[i].Speed /= speedReduction;
-                        slowedfor = 0;
-                    }
-                }
+                //if (enemies[i].Slowed)
+                //{
+                //    //slowedfor += gameTime.ElapsedGameTime.Milliseconds *0.001f;
+                //    //if(slowedfor >= slowedTime)
+                //    //{
+                //    //    enemies[i].Slowed = false;
+                //    //    enemies[i].Speed /= speedReduction;
+                //    //    slowedfor = 0;
+                //    //}
+                //}
             }
-             
+
+            slowedfor += gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+
 
 
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
