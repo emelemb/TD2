@@ -131,6 +131,8 @@ namespace TD2
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = System.Drawing.Color.LightGray;
             ClientSize = new System.Drawing.Size(507, 303);
+            StartPosition = FormStartPosition.Manual;
+            Location = new System.Drawing.Point(1300,150);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -141,6 +143,7 @@ namespace TD2
             Controls.Add(button1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "TowerMenu";
+            StartPosition = FormStartPosition.Manual;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
