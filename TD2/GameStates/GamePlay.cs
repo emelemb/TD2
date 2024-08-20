@@ -258,7 +258,7 @@ namespace TD2.GameStates
             lvl.Draw(spriteBatch);
             towerManager.Draw(spriteBatch);
             belt.Draw(spriteBatch);
-         
+            UI.Draw(spriteBatch);
 
             spriteBatch.End();
 

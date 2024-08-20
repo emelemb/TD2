@@ -16,7 +16,7 @@ namespace TD2.Managers
     internal class EnemyManager
     {
         public List<BaseEnemy> enemies;
-        bool spawnOk = true;
+        bool spawnOk = false;
         GraphicsDevice graphicsDevice;
         float delayT = 4000f;
         float delayC = 6000f;
@@ -39,12 +39,22 @@ namespace TD2.Managers
         {
             for (int i = 0; i < tabletAmount; i++)
             {
-                if (timeSinceLast >= delayT)
+                if (enemies.Count >= 1)
+                {
+                    if (timeSinceLast >= delayT)
+                    {
+                        BaseEnemy tbs = new TabletScraps(graphicsDevice);
+                        enemies.Add(tbs);
+                        timeSinceLast = 0;
+                    }
+                }
+                if(enemies.Count == 0)
                 {
                     BaseEnemy tbs = new TabletScraps(graphicsDevice);
                     enemies.Add(tbs);
                     timeSinceLast = 0;
                 }
+           
             }
 
             timeSinceLast += gametime.ElapsedGameTime.Milliseconds;
@@ -58,7 +68,16 @@ namespace TD2.Managers
         {
             for (int i = 0; i < computerAmount; i++)
             {
-                if (timeSinceLastc >= delayC)
+                if (enemies.Count >= 1)
+                {
+                    if (timeSinceLastc >= delayC)
+                    {
+                        BaseEnemy cps = new ComputerScraps(graphicsDevice);
+                        enemies.Add(cps);
+                        timeSinceLastc = 0;
+                    }
+                }
+                if(enemies.Count == 0 && Globals.timeUntilNextWave <= 0) 
                 {
                     BaseEnemy cps = new ComputerScraps(graphicsDevice);
                     enemies.Add(cps);
@@ -66,7 +85,6 @@ namespace TD2.Managers
                 }
             }
 
-            timeSinceLast += gametime.ElapsedGameTime.Milliseconds;
             timeSinceLastc += gametime.ElapsedGameTime.Milliseconds;
 
             if (computerAmount + tabletAmount < enemies.Count)
@@ -79,14 +97,14 @@ namespace TD2.Managers
 
         public void Update(GameTime gametime)
         {
-            time += gametime.ElapsedGameTime.Milliseconds;
-            if (spawnOk && time > 20000)
+         
+            if (spawnOk )
             {
                 SpawnTabletScarps(gametime);
                 SpawnComputers(gametime);
 
             }
-            if (enemies.Count == 0)
+            if (enemies.Count == 0 )
             {
                 Globals.timeUntilNextWave -= gametime.ElapsedGameTime.Milliseconds * 0.001f;
             }
@@ -95,10 +113,9 @@ namespace TD2.Managers
 
             if (Globals.timeUntilNextWave <= 0)
             {
-                spawnOk = true;
                 Globals.waveCount++;
-                Globals.timeUntilNextWave = 20;
-
+                spawnOk = true;
+                Globals.timeUntilNextWave = 15;
             }
 
             foreach (BaseEnemy enemy in enemies)
@@ -109,14 +126,11 @@ namespace TD2.Managers
 
         public void Draw(SpriteBatch sb)
         {
-
             foreach (BaseEnemy enemy in enemies)
             {
                 enemy.Draw(sb);
 
             }
-
-
         }
     }
 }

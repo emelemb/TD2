@@ -21,7 +21,6 @@ namespace TD2.Managers
         int time;
         Rectangle bounds;
         Vector2 position;
-
         public Rectangle Bounds { get => bounds; set => bounds = value; }
 
         public UI()
@@ -47,8 +46,5 @@ namespace TD2.Managers
             sb.DrawString(font, " " + time, new Vector2(885, 312), Color.White);
             sb.DrawString(font, " " + Globals.lives, new Vector2(895, 226), Color.White);
         }
-
-
-
     }
 }

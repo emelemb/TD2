@@ -58,8 +58,7 @@ namespace TD2.GameStates
             spriteBatch.Begin();
             if (Globals.lives <= 0)
             {
-                spriteBatch.Draw(TextureManager.loseScreen, new Vector2(0, 0), Color.White);
-          
+                spriteBatch.Draw(TextureManager.loseScreen, new Vector2(0, 0), Color.White);      
             }
             else
             {

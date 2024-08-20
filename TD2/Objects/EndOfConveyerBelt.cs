@@ -26,7 +26,7 @@ namespace TD2.Objects
         public EndOfConveyerBelt(Texture2D texture, Vector2 position)
         {
             this.texture = texture;
-            this.position = position;
+            this.Position = position;
         }
 
         public void Update(GameTime gametime)

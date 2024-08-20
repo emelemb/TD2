@@ -82,7 +82,6 @@ namespace TD2.Objects
                 Curve_curpos += curve_speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
 
-
             if (lives <= 0)
             { 
               alive = false; 

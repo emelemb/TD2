@@ -44,9 +44,9 @@ namespace TD2.Managers
 
             pathTexture = content.Load<Texture2D>("path");
             conveyerAnime = content.Load<Texture2D>("conveyerAnime");
-
+                                                                                                 
             border = content.Load<Texture2D>("bg");
-            placementTexture = content.Load<Texture2D>("Wip");
+            placementTexture = content.Load<Texture2D>("wipo");
 
             startScreen = content.Load<Texture2D>("startScreen");
             loseScreen = content.Load<Texture2D>("loseScreen");

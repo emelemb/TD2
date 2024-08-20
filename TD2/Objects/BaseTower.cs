@@ -69,11 +69,30 @@ namespace TD2.Objects
                             enemies[i].Speed = enemies[i].Speed * speedReduction;
                         }                   
                         projectiles.Remove(projectile);
-
                     }
                 }
             }
         }
+
+        BaseEnemy ClosestEnemy(List<BaseEnemy> enemies)
+        {
+            BaseEnemy closestEnemy = null;
+            float closestDistance = float.MaxValue;
+
+            for(int i = 0; i < enemies.Count; i++)
+            {
+                BaseEnemy tempEnemy = enemies[i];
+                float distanceToEnemy = Vector2.Distance(Position, tempEnemy.Position);
+                if(distanceToEnemy < closestDistance)
+                {
+                    closestEnemy = tempEnemy;
+                    closestDistance = distanceToEnemy;
+                }
+            }
+
+            return closestEnemy;
+        }
+
         public void checkProjectileRange()
         {
             for (int i = 0; i < projectiles.Count; i++)
@@ -83,15 +102,27 @@ namespace TD2.Objects
             }
         }
 
-        public abstract void AddProjectile(Vector2 position);
+        public abstract void AddProjectile(Vector2 position, int targetDirection);
 
         public void update(GameTime gameTime, List<BaseEnemy> enemies)
         {
             timeSinceLast += gameTime.ElapsedGameTime.Milliseconds;
-
+            int targetDirection = 0;    
+            BaseEnemy closestEnemy = ClosestEnemy(enemies);
+            if(closestEnemy != null)
+            {
+                if(closestEnemy.Position.X < position.X)
+                {
+                    targetDirection = -1;
+                }
+                if(closestEnemy.Position.X > position.X)
+                {
+                    targetDirection = 1;
+                }
+            }
             if (timeSinceLast >= delay)
             {
-                if (enemies.Count > 0) { AddProjectile(position); }
+                if (enemies.Count > 0) { AddProjectile(Position, targetDirection); }
             
                 timeSinceLast = 0;
             }
@@ -113,7 +144,6 @@ namespace TD2.Objects
                 {
                     currentFrame.X = 0;
                 }
-
             }
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
         }

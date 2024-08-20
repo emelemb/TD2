@@ -19,22 +19,22 @@ namespace TD2.Objects
         {
             delay = 800;
             cost = 100;
-            position = pos;
+            Position = pos;
             dmg = 1;
             speedReduction = 1.0f;
         }
 
 
-        public override void AddProjectile(Vector2 position)
+        public override void AddProjectile(Vector2 position, int targetDirection)
         {
-            Vector2 projectilPos = new Vector2(position.X + 30, position.Y + 40);
-            Wrench wrench = new Wrench(TextureManager.wrench,projectilPos);
-            projectiles.Add(wrench);
+            Vector2 projectilPos = new Vector2(position.X + texture.Width/2 , position.Y + texture.Height/2);
+            Wrench wrench = new Wrench(TextureManager.wrench,projectilPos, targetDirection);
+            projectiles.Add(wrench); 
         }
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(TextureManager.BlackCA, position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+            sb.Draw(TextureManager.BlackCA, Position, new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
             base.Draw(sb);
         }
     }

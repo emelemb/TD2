@@ -30,7 +30,7 @@ namespace TD2.Objects
 
         public override void Draw(SpriteBatch sb)
         {
-            float posX = position.X;
+            float posX = Position.X;
             Debug.WriteLine(this.hitBox);
 
             if (!perish)
@@ -41,7 +41,7 @@ namespace TD2.Objects
 
                     for (int i = 0; i < lives; i++)
                     {
-                        sb.Draw(TextureManager.hp, new Vector2(posX+20, position.Y), Color.White);
+                        sb.Draw(TextureManager.hp, new Vector2(posX+20, Position.Y), Color.White);
                         posX += TextureManager.hp.Width;
                     }
                 }

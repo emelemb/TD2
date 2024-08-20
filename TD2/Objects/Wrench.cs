@@ -11,7 +11,7 @@ namespace TD2.Objects
 {
     internal class Wrench : Projectile
     {
-        public Wrench(Texture2D tex, Vector2 pos) : base(tex, pos)
+        public Wrench(Texture2D tex, Vector2 pos, int targetDirection) : base(tex, pos, targetDirection)
         {
             speed = 5.0f;
             texture = TextureManager.wrench;

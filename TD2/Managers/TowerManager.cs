@@ -33,7 +33,7 @@ namespace TD2.Managers
         {
 
         }
-        //LaserManager laserManager;
+  
         public TowerManager(EnemyManager enemyManager, GamePlay gameplay)
         {
             towerList = new List<BaseTower>();
@@ -41,11 +41,6 @@ namespace TD2.Managers
             this.gameplay = gameplay;
             
         }
-
-        //public List<BaeTower> GetAllOf()
-        //{
-        //    return towerList;
-        //}
 
         public void AddTower(Vector2 pos)
         {

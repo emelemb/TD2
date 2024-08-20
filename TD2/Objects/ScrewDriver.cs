@@ -12,7 +12,7 @@ namespace TD2.Objects
 {
     internal class ScrewDriver : Projectile
     {
-        public ScrewDriver(Texture2D tex, Vector2 pos) : base(tex, pos)
+        public ScrewDriver(Texture2D tex, Vector2 pos, int targetDirection) : base(tex, pos, targetDirection)
         {
             speed = 3;
             texture = TextureManager.screwDriver;

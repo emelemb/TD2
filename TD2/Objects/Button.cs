@@ -24,7 +24,7 @@ namespace TD2.Objects
 
         public Button(  Vector2 pos, Texture2D tex) 
         {     
-            this.position = pos;
+            this.Position = pos;
             this.texture = tex;
         }
         public void Draw(SpriteBatch sb)

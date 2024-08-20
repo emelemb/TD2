@@ -17,6 +17,8 @@ namespace TD2.Objects
         protected Vector2 objectCenter;
         protected Vector2 position;
         protected Texture2D texture;
+        public Vector2 Position { get => position; set => position = value; }
+
 
 
         public Texture2D Texture { get { return texture; } }
@@ -25,8 +27,8 @@ namespace TD2.Objects
         {
             get
             {
-                hitBox.Y = (int)position.Y;
-                hitBox.X = (int)position.X;
+                hitBox.Y = (int)Position.Y;
+                hitBox.X = (int)Position.X;
                 hitBox.Width = (int)texture.Width;
                 hitBox.Height = (int)texture.Height;
                 return hitBox;
@@ -42,8 +44,6 @@ namespace TD2.Objects
                 return objectCenter;
             }
         }
-
-
 
     }
 }
