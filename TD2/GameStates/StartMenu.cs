@@ -35,7 +35,6 @@ namespace TD2.GameStates
         {
             TextureManager.Textures(content);
 
-
             startButtonPos = new Vector2(450, 400);
             startButton = new Button( startButtonPos, TextureManager.startButton);
 
@@ -101,7 +100,6 @@ namespace TD2.GameStates
             }
      
             sb.End();
-
 
         }
 

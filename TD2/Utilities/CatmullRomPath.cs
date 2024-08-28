@@ -254,8 +254,7 @@ public class CatmullRomPath
         num = MathF.Atan2(vector.Y, vector.X);
         num += MathHelper.ToRadians(90f);
 
-  //      _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default);
         _spriteBatch.Draw(tex, position, null, Color.White, num, new Vector2(tex.Width / 2, tex.Height / 2), new Vector2(1f, 1f), SpriteEffects.None, 0f);
-        //_spriteBatch.End();
+
     }
 }

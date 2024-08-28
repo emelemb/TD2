@@ -52,9 +52,6 @@ namespace TD2.Objects
                     cpath_moving.DrawMovingObject(Curve_curpos, sb, TextureManager.tbsDone);
                 }
             }
-          
-
-            // Other drawing logic...
         }
     }
 }

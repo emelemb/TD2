@@ -178,7 +178,6 @@ namespace TD2.GameStates
             {
                 case PlayStates.play:
 
-                    //tower.Show();
                     towerMenu.Show();
                     towerManager.Update(gameTime, enemyManager.enemies);
                     enemyManager.Update(gameTime);

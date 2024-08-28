@@ -34,13 +34,9 @@ static class InputParser
         return ints;
     }
 
-    // Parse string of 2x comma-separated integers from string to a Vector2
-    // E.g. "1, 5" -> Vector2(1, 5)
     public static Vector2 parse_Vector2(string line)
     {
-        //System.Diagnostics.Debug.WriteLine("Got " + line);
         int[] ints = parse_ints(line);
-        //System.Diagnostics.Debug.WriteLine("Parsed " + ints[0].ToString() + ", " + ints[1].ToString());
         return new Vector2(ints[0], ints[1]);
     }
 }

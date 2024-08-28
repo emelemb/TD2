@@ -19,8 +19,6 @@ namespace TD2.Objects
         protected Texture2D texture;
         public Vector2 Position { get => position; set => position = value; }
 
-
-
         public Texture2D Texture { get { return texture; } }
 
         public Rectangle HitBox

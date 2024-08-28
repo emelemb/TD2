@@ -129,7 +129,6 @@ namespace TD2.Managers
             foreach (BaseEnemy enemy in enemies)
             {
                 enemy.Draw(sb);
-
             }
         }
     }

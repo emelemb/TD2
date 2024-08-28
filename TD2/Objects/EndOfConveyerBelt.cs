@@ -50,7 +50,7 @@ namespace TD2.Objects
                         }
                         if (!enemies[i].Alive)
                         {
-                            Globals.money += 50;
+                            Globals.money += 15;
                         }
                     }
 

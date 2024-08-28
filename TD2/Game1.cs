@@ -25,14 +25,10 @@ namespace TD2
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.ApplyChanges();
-
-
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -45,12 +41,11 @@ namespace TD2
             gameStateManager.LoadContent(Content);
 
             List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(Content.Load<Texture2D>("OrangeCat"));
-            textures.Add(Content.Load<Texture2D>("BlackCat"));
+            textures.Add(Content.Load<Texture2D>("star"));
+            textures.Add(Content.Load<Texture2D>("spark"));
             textures.Add(Content.Load<Texture2D>("diamond"));
             particleSystem = new ParticleSystem(textures, new Vector2(400, 240));
 
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
@@ -60,9 +55,8 @@ namespace TD2
 
             gameStateManager.Update(gameTime);
 
-            particleSystem.EmitterLocation = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            particleSystem.StartLocation = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
             particleSystem.Update();
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
@@ -70,13 +64,9 @@ namespace TD2
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Gray);
-
           
             gameStateManager.Draw(_spriteBatch);
             particleSystem.Draw(_spriteBatch);
-            // TODO: Add your drawing code here
-
-
 
             base.Draw(gameTime);
 

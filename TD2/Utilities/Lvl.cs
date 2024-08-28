@@ -12,9 +12,6 @@ namespace TD2
         CatmullRomPath cpath_road;
         public static int levelNr;
 
-        // Current location along the curve (car).
-        // 0 and 1 is at the first and last control point, respectively.
-        // How fast to go along the curve = fraction of curve / second
         float curve_speed = 0.2f;
 
         GraphicsDevice gd;

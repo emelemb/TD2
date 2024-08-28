@@ -15,8 +15,6 @@ namespace TD2.Objects
         {
             speed = 5.0f;
             texture = TextureManager.wrench;
-        }
-
-     
+        } 
     }
 }

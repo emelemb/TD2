@@ -17,13 +17,13 @@ namespace TD2.Managers
     internal class ParticleSystem
     {
         private Random random;
-        public Vector2 EmitterLocation { get; set; }    
+        public Vector2 StartLocation { get; set; }    
         private List<Particle> particles;
         private List<Texture2D> textures; 
 
         public ParticleSystem(List<Texture2D> textures, Vector2 location)
         {
-            EmitterLocation = location;
+            StartLocation = location;
             this.textures = textures;
             this.particles = new List<Particle>();
             random = new Random();
@@ -35,7 +35,7 @@ namespace TD2.Managers
 
             for (int i = 0; i < total; i++)
             {
-                particles.Add(GenerateNewParticle());
+                particles.Add(NewParticle());
             }
 
             for (int particle = 0; particle < particles.Count; particle++)
@@ -49,20 +49,19 @@ namespace TD2.Managers
             }
         }
 
-        private Particle GenerateNewParticle()
+        private Particle NewParticle()
         {
             Texture2D texture = textures[random.Next(textures.Count)];
-            Vector2 position = EmitterLocation;
-            Vector2 velocity = new Vector2(
-                                    1f * (float)(random.NextDouble() * 2 - 1),
-                                    1f * (float)(random.NextDouble() * 2 - 1));
+            Vector2 position = StartLocation;
+            Vector2 velocity = new Vector2( 1f * (float)(random.NextDouble() * 2 - 1), 1f * (float)(random.NextDouble() * 2 - 1));
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
-            Color color = new Color(
-                        (float)random.NextDouble(),
-                        (float)random.NextDouble(),
-                        (float)random.NextDouble());
-            float size = (float)random.NextDouble() / 2;
+
+            float red = 1.0f;
+            float green = (float)random.NextDouble() * 0.2f + 0.8f;
+            float blue = (float)random.NextDouble() * green;
+            Color color = new Color( red, green , blue);
+            float size = (float)random.NextDouble();
             int ttl = 20 + random.Next(40);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);
@@ -71,9 +70,9 @@ namespace TD2.Managers
         public void Draw(SpriteBatch spriteBatch)
         {
           
-            for (int index = 0; index < particles.Count; index++)
+            for (int i = 0; i < particles.Count; i++)
             {
-                particles[index].Draw(spriteBatch);
+                particles[i].Draw(spriteBatch);
             }
 
         }

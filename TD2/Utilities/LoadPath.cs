@@ -14,8 +14,5 @@ namespace TD2
             foreach (string line in lines)
                 path.AddPoint(InputParser.parse_Vector2(line));
         }
-
-        //Hoppas över i genomgång.
-
     }
 }

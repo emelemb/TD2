@@ -37,7 +37,7 @@ namespace TD2.Objects
             position.X += (speed * targetDir);
             hitBox.X = (int)Position.X;
             rotation -= 0.1f;
-            //changedir = true;
+
             if (targetDir < 0)
             {
                 if (startPos.X - Position.X >= range.X)
